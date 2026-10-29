@@ -1,0 +1,44 @@
+{
+  "name": "enumjx",
+  "version": "0.1.0",
+  "description": "JavaScript enums with stable identity, parsing, metadata, flags, and React select components",
+  "keywords": ["enum", "enums", "javascript", "typescript", "react", "flags", "bitwise"],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sanketshahane05/enumjx.git"
+  },
+  "homepage": "https://sanketshahane05.github.io/enumjx/",
+  "bugs": "https://github.com/sanketshahane05/enumjx/issues",
+  "private": true,
+  "type": "module",
+  "main": "./index.js",
+  "types": "./index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./index.d.ts",
+      "default": "./index.js"
+    },
+    "./react": {
+      "types": "./react.d.ts",
+      "default": "./react.js"
+    }
+  },
+  "files": ["index.js", "index.d.ts", "enums.js", "enums.d.ts", "react.js", "react.d.ts", "README.md"],
+  "scripts": {
+    "test": "node --test enums.test.mjs react.test.mjs",
+    "build:demo": "node build-demo.mjs",
+    "typecheck": "tsc -p tsconfig.types.json",
+    "check": "npm run test && npm run typecheck && npm run build:demo && npm pack --dry-run"
+  },
+  "peerDependencies": {
+    "react": "^18.0.0 || ^19.0.0"
+  },
+  "devDependencies": {
+    "@types/react": "^19.0.0",
+    "@types/react-dom": "^19.0.0",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "typescript": "^5.0.0"
+  }
+}
+

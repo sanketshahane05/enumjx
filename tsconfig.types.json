@@ -1,0 +1,13 @@
+{
+  "compilerOptions": {
+    "target": "ES2022",
+    "module": "NodeNext",
+    "moduleResolution": "NodeNext",
+    "strict": true,
+    "noEmit": true,
+    "skipLibCheck": false,
+    "jsx": "react-jsx"
+  },
+  "files": ["enums.d.ts", "react.d.ts", "types.test.ts", "react.types.test.tsx"]
+}
+
