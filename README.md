@@ -9,7 +9,7 @@ const Status = Enums.Status('Active', 'Pending', 'Done');
 Status.Active === Status.fromName('active'); // true
 ```
 
-The npm package exports both `Enums` and the React components from one import. [`enums.js`](./enums.js) is also a standalone ES module with no React dependency. Try the [interactive browser demo](./index.html).
+The npm package exports both `Enums` and the React components from one import. [`enums.js`](./enums.js) is also a standalone ES module with no React dependency; [`enums.min.js`](./enums.min.js) is its minified build. Try the [interactive browser demo](./index.html).
 
 ## Installation
 
@@ -205,13 +205,13 @@ After the npm release, import the standalone core from a CDN without loading Rea
 
 ```html
 <script type="module">
-  import { Enums } from 'https://cdn.jsdelivr.net/npm/enumjx@0.1.0/enums.js';
+  import { Enums } from 'https://cdn.jsdelivr.net/npm/enumjx@0.1.0/enums.min.js';
   const Status = Enums.Status('Active', 'Pending');
   document.body.textContent = Status.Active.name;
 </script>
 ```
 
-Replace `0.1.0` with the published version. Pinning the version keeps existing sites stable. The React components are intended for React apps and bundlers.
+Replace `0.1.0` with the published version. Pinning the version keeps existing sites stable. For readable CDN source, use `/enums.js` instead of `/enums.min.js`. The React components are intended for React apps and bundlers.
 
 The generated [`index.html`](./index.html) is the Pages site. Commit both the template and generated page. In the GitHub repository, open **Settings → Pages**, choose **Deploy from a branch**, select the default branch and **/(root)**, then save. The URL will usually be `https://sanketshahane05.github.io/enumjx/` once Pages is enabled. Run `npm run build:demo` whenever the core or template changes.
 
@@ -222,7 +222,7 @@ npm install
 npm run check
 ```
 
-`npm run check` runs the JavaScript tests, TypeScript checks, rebuilds the demo, and shows the npm package contents. To publish:
+`npm run check` builds `enums.min.js`, runs the JavaScript tests and TypeScript checks, rebuilds the demo, and shows the npm package contents. To publish:
 
 1. Verify that `enumjx` is available on npm. This project uses the MIT license.
 2. Confirm the repository and homepage metadata in `package.json`.

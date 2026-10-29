@@ -3,6 +3,13 @@ import assert from 'node:assert/strict';
 import { readFile } from 'node:fs/promises';
 import { runInNewContext } from 'node:vm';
 import { Enums } from './enums.js';
+import { Enums as MinifiedEnums } from './enums.min.js';
+
+test('minified browser module exports the same enum behavior', () => {
+    const Status = MinifiedEnums.Status('Active', 'Paused');
+    assert.equal(Status.fromName('active'), Status.Active);
+    assert.equal(Status.bitwise().combine([Status.Active]).mask, 1);
+});
 
 test('self-contained browser demo executes without a module request', async () => {
     const html = await readFile(new URL('./index.html', import.meta.url), 'utf8');

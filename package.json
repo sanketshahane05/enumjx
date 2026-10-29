@@ -2,7 +2,15 @@
   "name": "enumjx",
   "version": "0.1.0",
   "description": "JavaScript enums with stable identity, parsing, metadata, flags, and React select components",
-  "keywords": ["enum", "enums", "javascript", "typescript", "react", "flags", "bitwise"],
+  "keywords": [
+    "enum",
+    "enums",
+    "javascript",
+    "typescript",
+    "react",
+    "flags",
+    "bitwise"
+  ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/sanketshahane05/enumjx.git"
@@ -23,9 +31,19 @@
       "default": "./react.js"
     }
   },
-  "files": ["index.js", "index.d.ts", "enums.js", "enums.d.ts", "react.js", "react.d.ts", "README.md"],
+  "files": [
+    "index.js",
+    "index.d.ts",
+    "enums.js",
+    "enums.min.js",
+    "enums.d.ts",
+    "react.js",
+    "react.d.ts",
+    "README.md"
+  ],
   "scripts": {
-    "test": "node --test enums.test.mjs react.test.mjs",
+    "test": "npm run build:min && node --test enums.test.mjs react.test.mjs",
+    "build:min": "terser enums.js --module --compress --mangle --output enums.min.js",
     "build:demo": "node build-demo.mjs",
     "typecheck": "tsc -p tsconfig.types.json",
     "check": "npm run test && npm run typecheck && npm run build:demo && npm pack --dry-run"
@@ -38,7 +56,7 @@
     "@types/react-dom": "^19.0.0",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
+    "terser": "^5.51.2",
     "typescript": "^5.0.0"
   }
 }
-
