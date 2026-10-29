@@ -1,6 +1,13 @@
 {
   "name": "enumjx",
   "version": "0.1.0",
+  "author": {
+    "name": "Sanket Shahane",
+    "url": "https://sanketshahane.in/"
+  },
+  "contributors": [
+    { "name": "Sanket Shahane", "url": "https://github.com/sanketshahane05/" }
+  ],
   "description": "JavaScript enums with stable identity, parsing, metadata, flags, and React select components",
   "keywords": [
     "enum",
@@ -43,7 +50,7 @@
   ],
   "scripts": {
     "test": "npm run build:min && node --test enums.test.mjs react.test.mjs",
-    "build:min": "terser enums.js --module --compress --mangle --output enums.min.js",
+    "build:min": "terser enums.js --module --compress --mangle --comments some --output enums.min.js",
     "typecheck": "tsc -p tsconfig.types.json",
     "check": "npm run test && npm run typecheck && npm pack --dry-run"
   },

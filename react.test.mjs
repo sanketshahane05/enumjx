@@ -1,3 +1,4 @@
+// EnumJX © 2026 Sanket Shahane — https://sanketshahane.in/ — https://github.com/sanketshahane05/ — MIT
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import { createElement } from 'react';

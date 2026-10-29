@@ -1,3 +1,8 @@
+/*! @license EnumJX — MIT License
+ * Copyright (c) 2026 Sanket Shahane
+ * https://sanketshahane.in/
+ * https://github.com/sanketshahane05/
+ */
 import { createElement } from 'react';
 
 function optionsFor(enumType, getLabel, isDisabled) {

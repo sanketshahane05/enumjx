@@ -1,3 +1,4 @@
+// EnumJX © 2026 Sanket Shahane — https://sanketshahane.in/ — https://github.com/sanketshahane05/ — MIT
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import { readFile } from 'node:fs/promises';
@@ -8,6 +9,15 @@ test('minified browser module exports the same enum behavior', () => {
     const Status = MinifiedEnums.Status('Active', 'Paused');
     assert.equal(Status.fromName('active'), Status.Active);
     assert.equal(Status.bitwise().combine([Status.Active]).mask, 1);
+});
+
+test('published source and minified build retain attribution', async () => {
+    for (const path of ['enums.js', 'enums.min.js', 'index.js', 'react.js']) {
+        const source = await readFile(new URL(`./${path}`, import.meta.url), 'utf8');
+        assert.match(source.slice(0, 200), /Sanket Shahane/);
+        assert.match(source.slice(0, 200), /https:\/\/sanketshahane\.in\//);
+        assert.match(source.slice(0, 200), /https:\/\/github\.com\/sanketshahane05\//);
+    }
 });
 
 test('browser demo imports the core module instead of embedding it', async () => {

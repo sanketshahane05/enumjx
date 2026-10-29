@@ -1,3 +1,8 @@
+/*! @license EnumJX — MIT License
+ * Copyright (c) 2026 Sanket Shahane
+ * https://sanketshahane.in/
+ * https://github.com/sanketshahane05/
+ */
 // Enum members are singletons: Status.fromName('active') === Status.Active.
 const registries = new WeakMap();
 const boundBitwise = new WeakMap();

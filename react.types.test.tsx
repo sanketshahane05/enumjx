@@ -1,3 +1,4 @@
+// EnumJX © 2026 Sanket Shahane — https://sanketshahane.in/ — https://github.com/sanketshahane05/ — MIT
 import { Enums, EnumSelect, EnumMultiSelect, EnumCombinationSelect } from 'enumjx';
 
 const Role = Enums.Role([{ Name: 'Admin', Value: 'admin' }, { Name: 'User', Value: 'user' }]);

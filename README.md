@@ -1,5 +1,7 @@
 # EnumJX
 
+Created by [Sanket Shahane](https://sanketshahane.in/) · [GitHub profile](https://github.com/sanketshahane05/) · MIT licensed.
+
 JavaScript enums with stable member identity, parsing, metadata, immutable flag combinations, and React select components.
 
 ```js
@@ -10,6 +12,8 @@ Status.Active === Status.fromName('active'); // true
 ```
 
 The npm package exports both `Enums` and the React components from one import. [`enums.js`](./enums.js) is also a standalone ES module with no React dependency; [`enums.min.js`](./enums.min.js) is its minified build. Try the [interactive browser demo](./index.html).
+
+The source files carry a copyright and license header. Keep the copyright and permission notice when redistributing under MIT. A source credit is visible to readers; it does not track who installs or runs the library.
 
 ## Installation
 

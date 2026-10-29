@@ -1,3 +1,4 @@
+// EnumJX © 2026 Sanket Shahane — https://sanketshahane.in/ — https://github.com/sanketshahane05/ — MIT
 import { Enums, type EnumCombination } from './enums.js';
 
 const declarations = Enums.only(['APICommand', 'Permission'] as const);
