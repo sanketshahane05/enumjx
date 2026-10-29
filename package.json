@@ -44,9 +44,8 @@
   "scripts": {
     "test": "npm run build:min && node --test enums.test.mjs react.test.mjs",
     "build:min": "terser enums.js --module --compress --mangle --output enums.min.js",
-    "build:demo": "node build-demo.mjs",
     "typecheck": "tsc -p tsconfig.types.json",
-    "check": "npm run test && npm run typecheck && npm run build:demo && npm pack --dry-run"
+    "check": "npm run test && npm run typecheck && npm pack --dry-run"
   },
   "peerDependencies": {
     "react": "^18.0.0 || ^19.0.0"

@@ -1,7 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import { readFile } from 'node:fs/promises';
-import { runInNewContext } from 'node:vm';
 import { Enums } from './enums.js';
 import { Enums as MinifiedEnums } from './enums.min.js';
 
@@ -11,19 +10,12 @@ test('minified browser module exports the same enum behavior', () => {
     assert.equal(Status.bitwise().combine([Status.Active]).mask, 1);
 });
 
-test('self-contained browser demo executes without a module request', async () => {
+test('browser demo imports the core module instead of embedding it', async () => {
     const html = await readFile(new URL('./index.html', import.meta.url), 'utf8');
-    const script = html.match(/<script>([\s\S]*?)<\/script>/)?.[1];
-    assert.ok(script);
-    assert.doesNotMatch(script, /\bimport\s*\{/);
-    const elements = new Map();
-    const document = { querySelector(selector) {
-        if (!elements.has(selector)) elements.set(selector, { textContent: '' });
-        return elements.get(selector);
-    } };
-    runInNewContext(script, { document });
-    assert.equal(JSON.parse(elements.get('#result').textContent).sameMember, true);
-    assert.equal(JSON.parse(elements.get('#flags').textContent).hasStart, true);
+    assert.match(html, /<script type="module">\s*import \{ Enums \} from '\.\/enums\.js';/);
+    assert.doesNotMatch(html, /class EnumCombination/);
+    assert.match(html, /id="result"/);
+    assert.match(html, /id="flags"/);
 });
 
 test('dynamic declarations accept names, arrays, objects, and JSON', () => {
