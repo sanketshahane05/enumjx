@@ -9,7 +9,7 @@
   },
   "homepage": "https://sanketshahane05.github.io/enumjx/",
   "bugs": "https://github.com/sanketshahane05/enumjx/issues",
-  "private": true,
+  "license": "MIT",
   "type": "module",
   "main": "./index.js",
   "types": "./index.d.ts",

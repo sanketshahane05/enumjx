@@ -224,8 +224,8 @@ npm run check
 
 `npm run check` runs the JavaScript tests, TypeScript checks, rebuilds the demo, and shows the npm package contents. To publish:
 
-1. Verify that `enumjx` is available on npm and choose a license.
-2. Add the license and repository metadata, then remove `"private": true` from `package.json`.
+1. Verify that `enumjx` is available on npm. This project uses the MIT license.
+2. Confirm the repository and homepage metadata in `package.json`.
 3. Run `npm run check` and inspect `npm pack --dry-run` for the intended files.
 4. Sign in with `npm login` and confirm with `npm whoami`.
 5. Run `npm publish`. npm requires publishing authentication; follow its prompt.
