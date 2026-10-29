@@ -1,12 +1,15 @@
 {
   "name": "enumjx",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "author": {
     "name": "Sanket Shahane",
     "url": "https://sanketshahane.in/"
   },
   "contributors": [
-    { "name": "Sanket Shahane", "url": "https://github.com/sanketshahane05/" }
+    {
+      "name": "Sanket Shahane",
+      "url": "https://github.com/sanketshahane05/"
+    }
   ],
   "description": "JavaScript enums with stable identity, parsing, metadata, flags, and React select components",
   "keywords": [

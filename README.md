@@ -209,13 +209,13 @@ After the npm release, import the standalone core from a CDN without loading Rea
 
 ```html
 <script type="module">
-  import { Enums } from 'https://cdn.jsdelivr.net/npm/enumjx@0.1.0/enums.min.js';
+  import { Enums } from 'https://cdn.jsdelivr.net/npm/enumjx@0.1.1/enums.min.js';
   const Status = Enums.Status('Active', 'Pending');
   document.body.textContent = Status.Active.name;
 </script>
 ```
 
-Replace `0.1.0` with the published version. Pinning the version keeps existing sites stable. For readable CDN source, use `/enums.js` instead of `/enums.min.js`. The React components are intended for React apps and bundlers.
+Replace `0.1.1` with a later published version when you upgrade. Pinning the version keeps existing sites stable. For readable CDN source, use `/enums.js` instead of `/enums.min.js`. The React components are intended for React apps and bundlers.
 
 [`index.html`](./index.html) is the Pages site. It imports `enums.js` from the same folder. The live demo is at [sanketshahane05.github.io/enumjx](https://sanketshahane05.github.io/enumjx/).
 
